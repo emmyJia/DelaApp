@@ -1,0 +1,33 @@
+﻿@model DelaApp.ViewModels.AccountViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Login", "Account", method: FormMethod.Post))
+        {
+
+            @Html.AntiForgeryToken()
+            <div>
+                @Html.Label("UserName")
+                @Html.TextBoxFor(c => c.Account.Username, new { @class = "form-control" })
+
+            </div>
+            <div>
+                @Html.Label("Password")
+                @Html.PasswordFor(c => c.Account.Password, new { @class = "form-control" })
+            </div>
+            <button type="submit" >Entrar</button>
+        }
+
+    </div>
+</body>
+</html>
