@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DelaApp.Models.Customer>
+﻿@model DelaApp.ViewModels.CustomersViewModel
 
 @{
     Layout = null;
@@ -18,12 +18,14 @@
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                @*@Html.DisplayNameFor(model => model.Name)*@
+                Nombre
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Address1)
+                @*@Html.DisplayNameFor(model => model.Address1)*@
+                Direccion
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Address2)
             </th>
             <th>
@@ -34,17 +36,19 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ZipCode)
+            </th>*@
+            <th>
+                @*@Html.DisplayNameFor(model => model.Phone)*@
+                Telefono
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Phone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SponsorID)
+                @*@Html.DisplayNameFor(model => model.SponsorID)*@
+                <a>SponsorID</a>
             </th>
             <th></th>
         </tr>
     
-    @foreach (var item in Model) {
+    @foreach (var item in Model.CustomersList) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)

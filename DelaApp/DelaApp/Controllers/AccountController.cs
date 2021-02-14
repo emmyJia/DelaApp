@@ -7,11 +7,19 @@ using DelaApp.Models;
 using DelaApp.Settings;
 using DelaApp.ViewModels;
 using Newtonsoft.Json;
+using Microsoft.IdentityModel.Logging;
+using System.Data.Entity;
+using DelaApp.Entity;
 
 namespace DelaApp.Controllers
 {
     public class AccountController : Controller
     {
+        public AccountController()
+        {
+
+        }
+        
         // GET: Account
         public ActionResult Index()
         {
@@ -24,7 +32,7 @@ namespace DelaApp.Controllers
         [HttpPost]
         public ActionResult Login(AccountViewModel avm)
         {
-            if(avm.Account.Username == Settings.Settings.Username && avm.Account.Password==Settings.Settings.Password)
+            if(Service.Account.SearchAccount(avm.Account.Username, avm.Account.Password))
             {
                 return RedirectToAction("Index", "Home");
             }

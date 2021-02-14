@@ -8,6 +8,10 @@ namespace DelaApp.ViewModels
 {
     public class CustomersViewModel
     {
-        List<Customer> CustomersList { get; set; }
+        public CustomersViewModel()
+        {
+            CustomersList = new List<Customer>();
+        }
+        public List<Customer> CustomersList { get; set; }
     }
 }

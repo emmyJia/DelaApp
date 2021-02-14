@@ -7,7 +7,6 @@ namespace DelaApp.Settings
 {
     public class Settings
     {
-        public const string Password = "admin";
-        public const string Username = "DanielDela77";
+        public static string AppName = "Dela Incorporation";
     }
 }

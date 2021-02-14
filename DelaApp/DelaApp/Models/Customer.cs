@@ -17,6 +17,7 @@ namespace DelaApp.Models
         public int ID { get; set; }
         public int SponsorID { get; set; }
         public CustomerType CustomerType { get; set; }
+        public DateTime StartTime { get; set; }
     }
 
     public enum CustomerType

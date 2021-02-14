@@ -1,4 +1,6 @@
 ﻿using DelaApp.Models;
+using DelaApp.Service;
+using DelaApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +14,9 @@ namespace DelaApp.Controllers
         // GET: Customers
         public ActionResult Index()
         {
-            List<Customer> model = new List<Customer>();
-
-            return View();
+            var model = new CustomersViewModel();
+            model.CustomersList = Service.Customers.GetAllCustomers();
+            return View(model);
         }
 
         // GET: Customers/Details/5
